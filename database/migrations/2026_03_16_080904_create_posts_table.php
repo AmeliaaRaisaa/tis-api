@@ -8,10 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('review');
-            $table->foreignId('post_id')->constrained('posts')->onDelete('cascade');
+            $table->string('content');
             $table->timestamps();
         });
     }

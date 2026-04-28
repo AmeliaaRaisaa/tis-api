@@ -1,11 +1,13 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\PublicPostController;
+use Illuminate\Support\Facades\Route;
 
+Route::get('/public-posts', [PublicPostController::class, 'getAllPosts']);
 Route::prefix('books')->group(function(){
 
     Route::get('/', [BookController::class,'getAll']);
